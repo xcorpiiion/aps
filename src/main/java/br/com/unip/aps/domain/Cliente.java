@@ -30,6 +30,10 @@ public class Cliente {
 	@Column(nullable = false)
 	private int idade;
 
+	public Cliente() {
+		
+	}
+	
 	public long getId() {
 		return id;
 	}

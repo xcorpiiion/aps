@@ -17,6 +17,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<hibernate.version>5.4.2.Final</hibernate.version>
+		<mysql.connector.java.version>5.0.8</mysql.connector.java.version>
+		<compiler.version>3.6.1</compiler.version>
 	</properties>
 
 	<dependencies>
@@ -32,15 +35,21 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.4.10.Final</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
