@@ -1,241 +1,235 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Plataforma WEB</title>
 
-<!-- Bootstrap CSS -->
+<!--Estilo CSS-->
+<link rel="stylesheet" href="/css/home.css"/>
+
+<!--BootStrap CSS-->
 <link rel="stylesheet"
-	href="/node_modules/bootstrap/compiler/bootstrap.css"></link>
-<link rel="stylesheet" href="/fontawesome/css/all.min.css"></link>
-<title>APS - Home</title>
+	href="/node_modules/bootstrap/compiler/bootstrap.css"/>
+
+<!--Font Awesome-->
+<link rel="stylesheet" href="/fontawesome/css/all.css"/>
+
+<link rel="stylesheet" href="/fontawesome/js/all.js"/>
+<link rel="stylesheet" href="/fontawesome/scss/fontawesome.scss"/>
+
+<!--Fonte-->
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+	rel="stylesheet"/>
 </head>
 <body>
-	<nav
-		class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-primary">
-		<!-- Começo do navbar-->
 
-		<div class="container">
-			<!-- Começo do conteudo do Container do navbar -->
-			<a class="navbar-brand h1 mb-0" href="#">APS</a>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="/home/home">Aps</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarSite">
+				data-target="#navbarCollapse" aria-controls="navbarCollapse"
+				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSite">
-
+			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
-					<!-- Botões da navegação -->
-					<li class="nav-item"><a class="nav-link" href="/home">Home</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Quem
-							Somos</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Produtos</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="/planosNegocios/planos">Planos</a>
-					</li>
+					<li class="nav-item active"><a class="nav-link"
+						href="/home/home"> Home <span class="sr-only">(atual)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/quemSomos/quemSomos">Quem Somos</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/planosNegocios/planos">Planos</a></li>
 				</ul>
-				<!-- Fim dos Botões da navegação-->
-
-				<ul class="navbar-nav ml-auto">
-					<!-- Botões do dropdown -->
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle " href="#" data-toggle="dropdown"
-						id="navDrop"> <em class="fas fa-user"></em>
-					</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Registrar</a> <a
-								class="dropdown-item" href="#">Logar</a>
-						</div></li>
-				</ul>
-				<!-- Fim dos Botões do dropdown-->
-
-				<form class="form-inline">
-					<input class="form-control ml-4 mr-2" type="search"
-						placeholder="Buscar..."></input>
-					<button class="btn btn-dark " type="submit">OK</button>
+				<form id="login" class="form-inline mt-2 mt-md-0">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link"
+							href="/login/login"> Login </a></li>
+						<li class="nav-item"><a class="nav-link bg-light text-dark"
+							href="/cadastro/cadastro"> Cadastrar-se </a></li>
+					</ul>
 				</form>
 			</div>
-		</div>
-		<!-- Começo do conteudo do Container do navbar-->
-	</nav>
-	<!-- Fim do navbar-->
+		</nav>
+	</header>
 
-	<div id="carouselSite" class="carousel slide" data-ride="carousel">
-		<!-- imagens carousel -->
-
-		<ol class="carousel-indicators">
-			<li data-target="carouselSite" data-slide-to="0" class="active"></li>
-			<li data-target="carouselSite" data-slide-to="1"></li>
-			<li data-target="carouselSite" data-slide-to="2"></li>
-		</ol>
-
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<!-- Imagem 01 do banner-->
-				<img alt="" src="img/img1.jpg" class="img-fluid d-block" />
-
-				<div class="carousel-caption d-none d-md-block text-danger">
-					<h1>Lorem Ipsum</h1>
-					<p class="lead">Lorem Ipsum has been the industry's standard
-						dummy text ever since the 1500s, when an unknown printer took a
-						galley of type and scrambled it to make a type specimen book.</p>
+	<main role="main">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="first-slide" src="#" alt="Slide 1"/>
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Titulo 1</h1>
+							<p>Descrição 1</p>
+						</div>
+					</div>
 				</div>
-
-			</div>
-			<div class="carousel-item">
-				<!-- Imagem 02 do banner-->
-				<img alt="" src="img/img2.jpg" class="img-fluid d-block" />
-
-				<div class="carousel-caption d-none d-md-block text-dark">
-					<h1>Lorem Ipsum</h1>
-					<p class="lead">Lorem Ipsum has been the industry's standard
-						dummy text ever since the 1500s, when an unknown printer took a
-						galley of type and scrambled it to make a type specimen book.</p>
+				<div class="carousel-item">
+					<img class="second-slide" src="#" alt="Slide 2"/>
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Titulo 2</h1>
+							<p>Descrição 2</p>
+						</div>
+					</div>
 				</div>
-
-			</div>
-			<div class="carousel-item">
-				<!-- Imagem 03 do banner-->
-				<img alt="" src="img/img3.jpg" class="img-fluid d-block" />
-
-				<div class="carousel-caption d-none d-md-block ">
-					<h1>Lorem Ipsum</h1>
-					<p class="lead">Lorem Ipsum has been the industry's standard
-						dummy text ever since the 1500s, when an unknown printer took a
-						galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-
-			</div>
-		</div>
-		<!-- Fim imagens carousel-->
-
-		<a class="carousel-control-prev" href="#carouselSite" role="button"
-			data-slide="prev"> <!-- Indetificar de banner com seta--> <span
-			class="carousel-control-prev-icon"></span> <span class="sr-only">Anterior</span>
-		</a> <a class="carousel-control-next" href="#carouselSite" role="button"
-			data-slide="next"> <span class="carousel-control-next-icon"></span>
-			<span class="sr-only">Avançar</span>
-		</a>
-		<!-- Fim do indetificar de banner com seta-->
-	</div>
-
-
-	<div class="container">
-		<!-- Conteudo do Site-->
-		<div class="row">
-			<div class="col-12 text-center my-4">
-				<h1 class="display-3">Lorem Ipsum</h1>
-				<p>Contrary to popular belief, Lorem Ipsum is not simply random
-					text.</p>
-			</div>
-		</div>
-
-		<div class="row mb-5">
-
-			<div class="col-12 bg-dark text-light">
-				<div data-spy="scroll" data-target="#navbarVertical" data-offset="0"
-					class="scrollspySite">
-
-					<h4 id="item1">Lorem Ipsum</h4>
-					<!--Item 1-->
-					<p>Lorem Ipsum is simply dummy text of the printing and
-						typesetting industry. Lorem Ipsum has been the industry's standard
-						dummy text ever since the 1500s, when an unknown printer took a
-						galley of type and scrambled it to make a type specimen book.</p>
-
-					<h5 id="item1-1">The standard</h5>
-					<p>t is a long established fact that a reader will be
-						distracted by the readable content of a page when looking at its
-						layout. The point of using Lorem Ipsum is that it has a
-						more-or-less normal distribution of letters, as opposed to using
-						'Content here, content here', making it look like readable
-						English.</p>
-
-					<h5 id="item1-2">Many desktop</h5>
-					<p>t is a long established fact that a reader will be
-						distracted by the readable content of a page when looking at its
-						layout. The point of using Lorem Ipsum is that it has a
-						more-or-less normal distribution of letters, as opposed to using
-						'Content here, content here', making it look like readable
-						English.</p>
-
-					<h4 id="item2">Contrary to popular</h4>
-					<!--Item 2-->
-					<p>Lorem Ipsum has been the industry's standard dummy text ever
-						since the 1500s, when an unknown printer took a galley of type and
-						scrambled it to make a type specimen book. It has survived not
-						only five centuries, but also the leap into electronic
-						typesetting, remaining essentially unchanged.</p>
-
-					<h4 id="item3">There are</h4>
-					<!--Item 3-->
-					<p>Lorem Ipsum is simply dummy text of the printing and
-						typesetting industry. Lorem Ipsum has been the industry's standard
-						dummy text ever since the 1500s, when an unknown printer took a
-						galley of type and scrambled it to make a type specimen book.</p>
-
-					<h5 id="item3-1">The standard</h5>
-					<p>t is a long established fact that a reader will be
-						distracted by the readable content of a page when looking at its
-						layout. The point of using Lorem Ipsum is that it has a
-						more-or-less normal distribution of letters, as opposed to using
-						'Content here, content here', making it look like readable
-						English.</p>
-
-					<h5 id="item3-2">Many desktop</h5>
-					<p>t is a long established fact that a reader will be
-						distracted by the readable content of a page when looking at its
-						layout. The point of using Lorem Ipsum is that it has a
-						more-or-less normal distribution of letters, as opposed to using
-						'Content here, content here', making it look like readable
-						English.</p>
+				<div class="carousel-item">
+					<img class="third-slide" src="#" alt="Slide 3">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Titulo 3</h1>
+							<p>Descrição 3</p>
+						</div>
+					</div>
 				</div>
 			</div>
+			<a class="carousel-control-prev" href="#myCarousel" role="button"
+				data-slide="prev"> <span class="carousel-control-prev-icon"
+				aria-hidden="true"></span> <span class="sr-only">Voltar</span>
+			</a> <a class="carousel-control-next" href="#myCarousel" role="button"
+				data-slide="next"> <span class="carousel-control-next-icon"
+				aria-hidden="true"></span> <span class="sr-only">Avançar</span>
+			</a>
 		</div>
 
-		<footer class="pt-4 my-md-5 pt-md-5 border-top">
+
+		<!-- Mensagens de marketing e outras featurezinhas
+      ================================================== -->
+		<!-- Envolve o resto da página em outro container, para centralizar todo o conteúdo. -->
+
+		<div class="container marketing">
+
+			<!-- Três colunas de texto, abaixo do carousel -->
 			<div class="row">
-				<div class="col-12 col-md">
-					<img class="mb-2" src="/docs/4.4/assets/brand/bootstrap-solid.svg"
-						alt="" width="24" height="24"></img> <small
-						class="d-block mb-3 text-muted">© 2020-2020</small>
+				<div class="col-lg-4">
+					<img class="rounded-circle"
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+						alt="Generic placeholder image" width="140" height="140">
+					<h2>Título</h2>
+					<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
+						euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
+						Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+						Praesent commodo cursus magna.</p>
+					<p>
+						<a class="btn btn-secondary" href="#" role="button">View
+							details &raquo;</a>
+					</p>
 				</div>
-				<div class="col-6 col-md">
-					<h5>Detalhes</h5>
-					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="#">Detalhes da empresa</a></li>
-						<li><a class="text-muted" href="#">Detalhes variados</a></li>
-						<li><a class="text-muted" href="#">Detalhes do time</a></li>
-					</ul>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<img class="rounded-circle"
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+						alt="Generic placeholder image" width="140" height="140"/>
+					<h2>Título</h2>
+					<p>Duis mollis, est non commodo luctus, nisi erat porttitor
+						ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
+						purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
+						tortor mauris condimentum nibh.</p>
+					<p>
+						<a class="btn btn-secondary" href="#" role="button">View
+							details &raquo;</a>
+					</p>
 				</div>
-				<div class="col-6 col-md">
-					<h5>Recursos</h5>
-					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="#">Recursos</a></li>
-						<li><a class="text-muted" href="#">Recursos nome</a></li>
-						<li><a class="text-muted" href="#">Outros recursos</a></li>
-						<li><a class="text-muted" href="#">Recursos final</a></li>
-					</ul>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<img class="rounded-circle"
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+						alt="Generic placeholder image" width="140" height="140"/>
+					<h2>Título</h2>
+					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis
+						in, egestas eget quam. Vestibulum id ligula porta felis euismod
+						semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+						condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+					<p>
+						<a class="btn btn-secondary" href="#" role="button">View
+							details &raquo;</a>
+					</p>
 				</div>
-				<div class="col-6 col-md">
-					<h5>Sobre</h5>
-					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="#">Time</a></li>
-						<li><a class="text-muted" href="#">Localização</a></li>
-						<li><a class="text-muted" href="#">Termos</a></li>
-					</ul>
+				<!-- /.col-lg-4 -->
+			</div>
+			<!-- /.row -->
+
+
+			<!-- COMEÇAM AS MENCIONADAS FEATUREZINHAS xD -->
+			<hr class="featurette-divider">
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading">
+						Primeiro título de featurezinhas. <span class="text-muted">Supreendente,
+							não?!</span>
+					</h2>
+					<p class="lead">Donec ullamcorper nulla non metus auctor
+						fringilla. Vestibulum id ligula porta felis euismod semper.
+						Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+						Fusce dapibus, tellus ac cursus commodo.</p>
+				</div>
+				<div class="col-md-5">
+					<img class="featurette-image img-fluid mx-auto"
+						data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
 				</div>
 			</div>
+
+			<hr class="featurette-divider">
+
+			<div class="row featurette">
+				<div class="col-md-7 order-md-2">
+					<h2 class="featurette-heading">
+						Aêêê, moleque! <span class="text-muted">Tá legal ou não tá?</span>
+					</h2>
+					<p class="lead">Donec ullamcorper nulla non metus auctor
+						fringilla. Vestibulum id ligula porta felis euismod semper.
+						Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+						Fusce dapibus, tellus ac cursus commodo.</p>
+				</div>
+				<div class="col-md-5 order-md-1">
+					<img class="featurette-image img-fluid mx-auto"
+						data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
+				</div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading">
+						E, por último, essa aqui. <span class="text-muted">Xeque-mate!</span>
+					</h2>
+					<p class="lead">Donec ullamcorper nulla non metus auctor
+						fringilla. Vestibulum id ligula porta felis euismod semper.
+						Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+						Fusce dapibus, tellus ac cursus commodo.</p>
+				</div>
+				<div class="col-md-5">
+					<img class="featurette-image img-fluid mx-auto"
+						data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
+				</div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<!-- /FIM DAS FEATUREZINHAS *-* -->
+
+		</div>
+		<!-- /.container -->
+
+
+		<footer class="container">
+			<p>&copy; 2017-2019 Nome da Empresa, Inc.</p>
 		</footer>
-	</div>
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	</main>
+
+	<!--BootStrap, Jquey e Popper-->
 	<script src="/node_modules/jquery/dist/jquery.js"></script>
-	<script src="/node_modules/popper.js/dist/umd/popper.js"></script>
+	<script src="/node_modules/popper.js/dist/popper.js"></script>
 	<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
 </body>
 </html>

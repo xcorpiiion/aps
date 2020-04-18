@@ -1,92 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns="http://www.thymeleaf.org">
-
+<html lang="pt-br">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Plataforma WEB</title>
 
-<link href="/node_modules/bootstrap/compiler/bootstrap.css"
+<!--Estilo CSS-->
+<link rel="stylesheet" href="/css/planos.css" />
+
+<!--BootStrap CSS-->
+<link rel="stylesheet"
+	href="/node_modules/bootstrap/compiler/bootstrap.css" />
+
+<!--Font Awesome-->
+<link rel="stylesheet" href="/fontawesome/css/all.css" />
+
+<link rel="stylesheet" href="/fontawesome/js/all.js" />
+<link rel="stylesheet" href="/fontawesome/scss/fontawesome.scss" />
+
+<!--Fonte-->
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
 	rel="stylesheet" />
-<link href="/fontawesome/css/all.min.css" rel="stylesheet" />
-<title>Planos</title>
 </head>
-
 <body>
-	<nav
-		class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-primary">
-		<!-- Começo do navbar-->
 
-		<div class="container">
-			<!-- Começo do conteudo do Container do navbar -->
-			<a class="navbar-brand h1 mb-0" href="#">APS</a>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="/home/home">Aps</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarSite">
+				data-target="#navbarCollapse" aria-controls="navbarCollapse"
+				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSite">
-
+			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
-					<!-- Botões da navegação -->
-					<li class="nav-item"><a class="nav-link" href="/home">Home</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Quem
-							Somos</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Produtos</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="/planosNegocios/planos">Planos</a>
-					</li>
+					<li class="nav-item active"><a class="nav-link"
+						href="/home/home"> Home <span class="sr-only">(atual)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/quemSomos/quemSomos">Quem Somos</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/planosNegocios/planos">Planos</a></li>
 				</ul>
-				<!-- Fim dos Botões da navegação-->
-
-				<ul class="navbar-nav ml-auto">
-					<!-- Botões do dropdown -->
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle " href="#" data-toggle="dropdown"
-						id="navDrop"> <em class="fas fa-user"></em>
-					</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Registrar</a> <a
-								class="dropdown-item" href="#">Logar</a>
-						</div></li>
-				</ul>
-				<!-- Fim dos Botões do dropdown-->
-
-
+				<form id="login" class="form-inline mt-2 mt-md-0">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link"
+							href="/login/login"> Login </a></li>
+						<li class="nav-item"><a class="nav-link bg-light text-dark"
+							href="/cadastro/cadastro"> Cadastrar-se </a></li>
+					</ul>
+				</form>
 			</div>
-		</div>
-		<!-- Começo do conteudo do Container do navbar-->
-	</nav>
-	<!-- Fim do navbar-->
+		</nav>
+	</header>
 
 	<div
 		class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<!--Preco-->
-		<h1 class="display-4">Preço</h1>
-		<p class="lead">Lorem Ipsum is simply dummy text of the printing
-			and typesetting industry.Lorem Ipsum has been the industry's standard
-			dummy text ever since the 1500s,</p>
+		<h1 class="display-4">Planos</h1>
+		<p class="lead">Construa uma tabela de preços para seus potenciais
+			clientes, com esse exemplo Bootstrap. Além do mais, é feito com
+			componentes padrões, utilitários e um pouquinho de customização.</p>
 	</div>
-	<!--Fim do Preco-->
+
 	<div class="container">
 		<div class="card-deck mb-3 text-center">
 			<div class="card mb-4 shadow-sm">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Free</h4>
+					<h4 class="my-0 font-weight-normal">Basic</h4>
 				</div>
 				<div class="card-body">
 					<h1 class="card-title pricing-card-title">
-						$0 <small class="text-muted">/ mo</small>
+						$0 <small class="text-muted">/ mês</small>
 					</h1>
 					<ul class="list-unstyled mt-3 mb-4">
-						<li>10 users included</li>
-						<li>2 GB of storage</li>
-						<li>Email support</li>
-						<li>Help center access</li>
+						<li>10 usuários</li>
 					</ul>
-					<button type="button"
-						class="btn btn-lg btn-block btn-outline-primary">Sign up
-						for free</button>
+					<button type="button" class="btn btn-lg btn-block btn-primary">Assinar</button>
 				</div>
 			</div>
 			<div class="card mb-4 shadow-sm">
@@ -95,78 +85,48 @@
 				</div>
 				<div class="card-body">
 					<h1 class="card-title pricing-card-title">
-						$15 <small class="text-muted">/ mo</small>
+						$15 <small class="text-muted">/ mês</small>
 					</h1>
 					<ul class="list-unstyled mt-3 mb-4">
-						<li>20 users included</li>
-						<li>10 GB of storage</li>
-						<li>Priority email support</li>
-						<li>Help center access</li>
+						<li>20 usuários</li>
 					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary">Get
-						started</button>
+					<button type="button" class="btn btn-lg btn-block btn-primary">Assinar</button>
 				</div>
 			</div>
 			<div class="card mb-4 shadow-sm">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Enterprise</h4>
+					<h4 class="my-0 font-weight-normal">Premium</h4>
 				</div>
 				<div class="card-body">
 					<h1 class="card-title pricing-card-title">
-						$29 <small class="text-muted">/ mo</small>
+						$29 <small class="text-muted">/ mês</small>
 					</h1>
 					<ul class="list-unstyled mt-3 mb-4">
-						<li>30 users included</li>
-						<li>15 GB of storage</li>
-						<li>Phone and email support</li>
-						<li>Help center access</li>
+						<li>30 usuários</li>
 					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary">Contact
-						us</button>
+					<button type="button" class="btn btn-lg btn-block btn-primary">Assinar</button>
 				</div>
 			</div>
 		</div>
 
-		<footer class="pt-4 my-md-5 pt-md-5 border-top">
-			<div class="row">
-				<div class="col-12 col-md">
-					<small class="d-block mb-3 text-muted">© 2020-2020</small>
-				</div>
-				<div class="col-6 col-md">
-					<h5>Detalhes</h5>
-					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="#">Detalhes da empresa</a></li>
-						<li><a class="text-muted" href="#">Detalhes variados</a></li>
-						<li><a class="text-muted" href="#">Detalhes do time</a></li>
-					</ul>
-				</div>
-				<div class="col-6 col-md">
-					<h5>Recursos</h5>
-					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="#">Recursos</a></li>
-						<li><a class="text-muted" href="#">Recursos nome</a></li>
-						<li><a class="text-muted" href="#">Outros recursos</a></li>
-						<li><a class="text-muted" href="#">Recursos final</a></li>
-					</ul>
-				</div>
-				<div class="col-6 col-md">
-					<h5>Sobre</h5>
-					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="#">Time</a></li>
-						<li><a class="text-muted" href="#">Localização</a></li>
-						<li><a class="text-muted" href="#">Termos</a></li>
-					</ul>
-				</div>
-			</div>
+
+		<footer class="container">
+			<p>&copy; 2017-2019 Nome da Empresa, Inc.</p>
 		</footer>
-	</div>
 
 
+		<!--Script-->
+		<script src="../js/script.js"></script>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="/node_modules/jquery/dist/jquery.js"></script>
-	<script src="/node_modules/popper.js/dist/umd/popper.js"></script>
-	<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<!--Progress Bar-->
+		<script src="../js/progressbar.js"></script>
+
+		<!--Parallax-->
+		<script src="../js/parallax.js"></script>
+
+		<!--BootStrap, Jquey e Popper-->
+		<script src="../node_modules/jquery/dist/jquery.js"></script>
+		<script src="../node_modules/popper.js/dist/popper.js"></script>
+		<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
