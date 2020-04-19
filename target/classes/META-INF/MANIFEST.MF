@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: apsunip
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Xcorpiion
+Implementation-Vendor-Id: br.com.unip.aps
+Build-Jdk: 1.8.0_251
+Implementation-URL: http://projects.spring.io/spring-boot/apsunip/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

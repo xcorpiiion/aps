@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login - Plataforma WEB</title>
+
+<!--Estilo CSS-->
+<link rel="stylesheet" href="/css/login.css/" />
+
+<!--BootStrap CSS-->
+<link rel="stylesheet"
+	href="/node_modules/bootstrap/compiler/bootstrap.css/" />
+
+<!--Font Awesome-->
+<link rel="stylesheet" href="/fontawesome/css/all.css" />
+
+<link rel="stylesheet" href="/fontawesome/js/all.js" />
+<link rel="stylesheet" href="/fontawesome/scss/fontawesome.scss" />
+
+<!--Fonte-->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display;" />
+</head>
+<body class="text-center">
+
+	<form class="form-signin" th:action="@{/login/salvar}" th:method="post"
+		th:object="${login}">
+		<div>
+			<input id="id" type="hidden" th:field="*{id}" /> <img class="mb-4"
+				src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72"
+				height="72" /> <img class="mb-4"
+				src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72"
+				height="72" />
+			<h1 class="h3 mb-3 font-weight-normal">Logar-se</h1>
+			<label for="inputEmail" class="sr-only">Email </label> <input
+				type="email" id="inputEmail" class="form-control"
+				placeholder="Email" required="required" autofocus="autofocus"
+				th:field="*{email}" />
+			<div th:if="${#fields.hasErrors('email')}" th:errors="*"></div>
+			<label for="inputPassword" class="sr-only">Senha</label> <input
+				type="password" id="inputPassword" class="form-control"
+				placeholder="Senha" required="required" autofocus="autofocus"
+				th:field="*{senha}" />
+		</div>
+		<div>
+			<button id="rodape" class="btn btn-lg btn-primary btn-block"
+				type="submit">Entrar</button>
+			<a class="nav-link text-dark" href="/login/salvar"></a>
+		</div>
+		<a class="nav-link text-dark" href="/cadastro/cadastro">Não tenho
+			cadastro</a>
+		<div th:if="${mensagem != null}">
+			<div class="alert alert-info" role="alert">
+				<span th:text="$mensagem">mensagem</span>
+			</div>
+		</div>
+		<p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+	</form>
+
+
+	<!--BootStrap, Jquey e Popper-->
+	<script src="/node_modules/jquery/dist/jquery.js"></script>
+	<script src="/node_modules/popper.js/dist/popper.js"></script>
+	<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+</html>
