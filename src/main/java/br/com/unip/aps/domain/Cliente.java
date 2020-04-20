@@ -6,15 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "Cliente")
 public class Cliente {
 	
 	@Id
@@ -26,14 +25,14 @@ public class Cliente {
 	@Column(nullable = false, length = 60)
 	private String nome;
 	
-	@NotBlank
+	@Email(message = "O email digitado é invalido")
 	@Column(nullable = false)
-	private int idade;
-
-	public Cliente() {
-		
-	}
+	private String email;
 	
+	@Size(min = 8, max = 30)
+	@Column(nullable = false, length = 30)
+	private String senha;
+
 	public long getId() {
 		return id;
 	}
@@ -50,29 +49,20 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public int getIdade() {
-		return idade;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	@Override
-	public int hashCode() {
-		return new HashCodeBuilder().append(id).toHashCode();
+	public String getSenha() {
+		return senha;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cliente other = (Cliente) obj;
-		return new EqualsBuilder().append(id, other.id).isEquals();
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	@Override

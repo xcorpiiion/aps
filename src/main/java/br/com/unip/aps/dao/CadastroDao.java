@@ -1,20 +1,29 @@
 package br.com.unip.aps.dao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import br.com.unip.aps.domain.Cliente;
 
 @Repository
 public class CadastroDao implements ICadastroDao {
 
-	@PersistenceContext
+	@Autowired
 	private EntityManager entityManager;
 	
 	@Override
-	public void cadastrar(String nome, String email, String senha) {
-		// TODO Auto-generated method stub
-		
+	public void cadastrar(Cliente cliente) {
+		entityManager.persist(cliente);
 	}
 
+	@Override
+	public Cliente recuperarPorId(long id) {
+		return entityManager.find(Cliente.class, id);
+		
+	}
+	
+	
+	
 }

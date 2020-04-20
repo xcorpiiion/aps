@@ -12,7 +12,7 @@ public class QuemSomosController {
 	
 	@GetMapping("/quemSomos")
 	public ModelAndView teste(ModelMap model) {
-		return new ModelAndView("/quemSomos/quemSomos.html");
+		return new ModelAndView("/quemSomos/quemSomos");
 	}
 	
 }
