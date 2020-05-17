@@ -1,56 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cadastro - Plataforma WEB</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-<!--Estilo CSS-->
-<link rel="stylesheet" href="/css/cadastro.css"></link>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css"/>
 
-<!--BootStrap CSS-->
-<link rel="stylesheet"
-	href="/node_modules/bootstrap/compiler/bootstrap.css" />
+    <link rel="stylesheet" href="../css/cadastrar.css"/>
 
-<!--Font Awesome-->
-<link rel="stylesheet" href="/fontawesome/css/all.css" />
-
-<link rel="stylesheet" href="/fontawesome/js/all.js" />
-<link rel="stylesheet" href="/fontawesome/scss/fontawesome.scss" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display;"/>
+    <title>Redivivus - Login</title>
 </head>
-<body class="text-center">
+<body>
 
-	<form class="form-signin" th:action="@{/cadastro/salvar}"
-		th:method="post" th:object="${cadastro}">
-		<div>
-			<input id="id" type="hidden" th:field="*{id}" /> <img class="mb-4"
-				src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72"
-				height="72"/>
-			<h1 class="h3 mb-3 font-weight-normal">Cadastra-se</h1>
-			<label for="inputName" class="sr-only">Email </label> <input
-				type="text" id="inputName" class="form-control" placeholder="Nome"
-				required="required" autofocus = "autofocus" th:field="*{nome}"/>
-			<div th:if="${#fields.hasErrors('nome')}" th:errors="*"></div>
-			<label for="inputEmail" class="sr-only">Email </label> <input
-				type="email" id="inputEmail" class="form-control"
-				placeholder="Email" required="required" autofocus = "autofocus" th:field="*{email}" />
-			<div th:if="${#fields.hasErrors('email')}" th:errors="*"></div>
-			<label for="inputPassword" class="sr-only">Senha</label> <input
-				type="password" id="inputPassword" class="form-control"
-				placeholder="Senha" required="required" autofocus = "autofocus" th:field="*{senha}" />
-			<div th:if="${#fields.hasErrors('senha')}" th:errors="*"></div>
-		</div>
-		<button id="rodape" class="btn btn-lg btn-primary btn-block"
-			type="submit">Cadastrar</button>
-		
-		<p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
-	</form>
+<form class="form-cadastrar" th:action="@{/cadastro/salvar}" th:method="post">
+    <h1 class="text-center h1 mb-3 font-weight-normal">Cadastrar-se</h1>
 
-	<!--BootStrap, Jquey e Popper-->
-	<script src="/node_modules/jquery/dist/jquery.js"></script>
-	<script src="/node_modules/popper.js/dist/popper.js"></script>
-	<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Sou:</legend>
+            <div class="col-sm-10">
 
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                           value="option1"/>
+                    <label class="form-check-label" for="inlineRadio1">Empresa</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                           value="option2"/>
+                    <label class="form-check-label" for="inlineRadio2">ONG</label>
+                </div>
+
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="cnpj">CNPJ:</label>
+            <input class="form-control" id="cnpj" type="text" th:field="${cliente.cnpj}"/>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="nomeFantasia">Nome Fantasia:</label>
+            <input type="text" class="form-control" id="nomeFantasia" required="" th:field="${cliente.nome}"/>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" required="" th:field="${cliente.email}"/>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="senha">Senha:</label>
+            <input type="password" class="form-control" id="senha" required="" th:field="${cliente.senha}"/>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Endereço:</label>
+            <input type="text" class="form-control" id="endereco" placeholder="Endereço" required=""
+                   th:field="${endereco.rua}"/>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Complemento:</label>
+            <input type="text" class="form-control" id="complemento" placeholder="Complemento"
+                   th:field="${endereco.complemento}"/>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-5">
+            <label for="inputState">Estado</label>
+            <select id="inputState" class="form-control">
+                <option> selected>Choose...</option>
+                <option>São Paulo</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputCity">Cidade</label>
+            <input type="text" class="form-control" id="inputCity" th:field="${endereco.cidade}"/>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputZip">CEP</label>
+            <input type="number" class="form-control" id="inputZip" th:field="${endereco.cep}"/>
+        </div>
+    </div>
+
+    <div class="form-row" th:object="${telefone}">
+        <div class="form-group col-md-6">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" class="form-control" id="telefone" th:field="*{telefone}"/>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="ramal">Ramal:</label>
+            <input type="tel" class="form-control" id="ramal" th:field="*{ramal}"/>
+            <div th:if="${#fields.hasErrors('ramal')}" th:errors="*{ramal}"></div>
+        </div>
+    </div>
+    <div th:if="${mensagem != null}">
+        <div class="alert alert-info" role="alert">
+            <span th:text="${mensagem}">mensagem</span>
+        </div>
+    </div>
+    <button class="btn btn-lg btn-outline-primary btn-block" type="submit">
+        Logar
+    </button>
+    <p class="text-center">&copy; 2019-2020 Redivivus</p>
+    <p class="text-center"><a href="/login/login">Logar-se</a></p>
+    <p class="text-center"><a href="/home">Voltar para Home</a></p>
+</form>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>

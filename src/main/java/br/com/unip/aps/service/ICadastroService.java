@@ -4,6 +4,7 @@ import br.com.unip.aps.domain.Cliente;
 
 public interface ICadastroService {
 	
-	void cadastrar(Cliente cliente);
-	Cliente recuperarPorId(long id);
+	void cadastrarEmpresa(String nome, String cnpj, String email, String senha);
+	void cadastrarEnderecoEmpresa(String rua, String complemento, String estado, String cidade, String cep);
+	void cadastrarTelefoneEmpresa(String numeroTelefone, String ramal);
 }
