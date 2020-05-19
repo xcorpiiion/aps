@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -20,22 +22,33 @@ public class Endereco implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Rua não pode está em branco")
+    @Size(min = 2,max = 40, message = "Rua deve ter entre 2 e 30 caracteres")
     private String rua;
 
-    @NotBlank
     private String complemento;
 
-    @NotBlank
+    @NotBlank(message = "Estado não pode está em branco")
+    @Size(min = 2,max = 30, message = "Estado deve ter entre 2 e 30 caracteres")
     private String estado;
 
-    @NotBlank
+    @NotBlank(message = "Cidade não pode está em branco")
+    @Size(min = 2,max = 30, message = "Cidade deve ter entre 2 e 30 caracteres")
     private String cidade;
 
-    @NotBlank
+    @NotBlank(message = "Cep não pode está em branco")
+    @Pattern(regexp = "^\\d{5}\\d{3}$", message = "Cep não pode conter letras")
     private String cep;
 
     public Endereco() {
+    }
+
+    public Endereco(String rua, String complemento, String estado, String cidade, String cep) {
+        this.rua = rua;
+        this.complemento = complemento;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.cep = cep;
     }
 
     public Long getId() {

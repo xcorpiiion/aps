@@ -1,10 +1,10 @@
 package br.com.unip.aps.service;
 
-import br.com.unip.aps.domain.Cliente;
+import br.com.unip.aps.domain.Empresa;
+import br.com.unip.aps.domain.Ong;
 
 public interface ICadastroService {
 	
-	void cadastrarEmpresa(String nome, String cnpj, String email, String senha);
-	void cadastrarEnderecoEmpresa(String rua, String complemento, String estado, String cidade, String cep);
-	void cadastrarTelefoneEmpresa(String numeroTelefone, String ramal);
+	void cadastrarEmpresa(Empresa empresa);
+	void cadastrarOng(Ong ong);
 }

@@ -32,12 +32,19 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/login/login">Login<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/cadastro/cadastro">Cadastre-se<span class="sr-only">(current)</span></a>
-                </li>
+                <div th:if="${mensagem == null}">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/login/login">Login<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/cadastro/cadastro">Cadastre-se<span class="sr-only">(current)</span></a>
+                    </li>
+                </div>
+                <div th:if="${mensagem != null}">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/login/sair">Sair<span class="sr-only">(current)</span></a>
+                    </li>
+                </div>
             </ul>
         </div>
     </nav>
@@ -105,7 +112,7 @@
     </section>
     <div th:if="${mensagem != null}">
         <div class="alert alert-info" role="alert">
-            <span th:text="$mensagem">mensagem</span>
+            <span th:text="${mensagem}">mensagem</span>
         </div>
     </div>
     <div class="container marketing">

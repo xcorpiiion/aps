@@ -13,17 +13,16 @@ import org.hibernate.validator.constraints.br.CNPJ;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Cliente")
-public class Cliente implements Serializable {
+public class Empresa implements Serializable {
 
 	private static final Long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@NotBlank
-	@Size(min = 2, max = 60)
+
+	@NotBlank(message = "Nome não pode está em branco")
+	@Size(min = 2, max = 60, message = "Nome deve possuir entre 2 e 60 caracteres")
 	@Column(nullable = false, length = 60)
 	private String nome;
 	
@@ -46,7 +45,18 @@ public class Cliente implements Serializable {
 	@JoinColumn(name = "id_telefone")
 	private Telefone telefone;
 
-	public Cliente() {
+	private boolean isLogado;
+
+	public Empresa() {
+	}
+
+	public Empresa(String nome, String email, String senha, String cnpj, Endereco endereco, Telefone telefone) {
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.cnpj = cnpj;
+		this.endereco = endereco;
+		this.telefone = telefone;
 	}
 
 	public long getId() {
@@ -105,13 +115,21 @@ public class Cliente implements Serializable {
 		this.telefone = telefone;
 	}
 
+	public boolean isLogado() {
+		return isLogado;
+	}
+
+	public void setLogado(boolean logado) {
+		isLogado = logado;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 
-		if (!(o instanceof Cliente)) return false;
+		if (!(o instanceof Empresa)) return false;
 
-		Cliente cliente = (Cliente) o;
+		Empresa cliente = (Empresa) o;
 
 		return new EqualsBuilder()
 				.append(id, cliente.id)
