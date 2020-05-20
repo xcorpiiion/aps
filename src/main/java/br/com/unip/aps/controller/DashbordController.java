@@ -40,10 +40,10 @@ public class DashbordController {
     public ModelAndView preSalvar(ModelMap modelMap) {
         if (loginService.retornaEmpresaLogada() != null) {
             this.empresa = loginService.retornaEmpresaLogada();
-            modelMap.addAttribute("cliente", Arrays.asList(loginService.retornaEmpresaLogada()));
+            modelMap.addAttribute("cliente", loginService.retornaEmpresaLogada());
         } else {
             this.ong = loginService.retornaOngLogada();
-            modelMap.addAttribute("cliente", Arrays.asList(loginService.retornaOngLogada()));
+            modelMap.addAttribute("cliente", loginService.retornaOngLogada());
         }
         return new ModelAndView("/dashbord/inicial", modelMap);
     }

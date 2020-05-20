@@ -13,6 +13,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("cadastro")
 public class CadastroController {
@@ -21,13 +23,13 @@ public class CadastroController {
     private ICadastroService cadastroService;
 
     @GetMapping("/cadastro")
-    public String preSalvar(@ModelAttribute("cliente") Empresa empresa,
+    public String preSalvar(@Valid @ModelAttribute("cliente") Empresa empresa,
                             @ModelAttribute("endereco") Endereco endereco, @ModelAttribute("telefone") Telefone telefone) {
         return "/cadastro/cadastro";
     }
 
     @PostMapping("/salvar")
-    public String salvar(@ModelAttribute("cliente") Empresa empresa,
+    public String salvar(@Valid @ModelAttribute("cliente") Empresa empresa,
                          @ModelAttribute("endereco") Endereco endereco, BindingResult result, @ModelAttribute("telefone") Telefone telefone,
                          RedirectAttributes redirect) {
 

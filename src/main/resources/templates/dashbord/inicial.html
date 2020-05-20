@@ -40,13 +40,13 @@
 
     <!--sidebar start-->
     <aside>
-        <div id="sidebar" class="nav-collapse " th:each="clientes : ${cliente}">
+        <div id="sidebar" class="nav-collapse " >
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                 <p class="centered"><a href="/dashbord/profile"><img src="img/ui-sam.jpg" class="img-circle"
                                                                      width="80"/></a>
                 </p>
-                <h5 class="centered" th:text="${clientes.nome}">Nome Empresa/Ong</h5>
+                <h5 class="centered" th:text="${cliente.nome}">Nome Empresa/Ong</h5>
 
                 <li class="mt">
                     <a class="active" href="/dashbord/inicial.html">
@@ -66,9 +66,9 @@
             <div class="row mt">
                 <div class="col-lg-12">
                     <div class="row content-panel">
-                        <div class="col-md-6 profile-text" th:each="clientes : ${cliente}">
-                            <h3 th:text="${clientes.nome}">Nome da Empresa/ONG</h3>
-                            <h6 th:text="${clientes.nome}">Empresa/ONG</h6>
+                        <div class="col-md-6 profile-text" >
+                            <h3 th:text="${cliente.nome}">Nome da Empresa/ONG</h3>
+                            <h6 th:text="${cliente.nome}">Empresa/ONG</h6>
                             <p>
                                 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
                                 piece of classical Latin literature from 45 BC.
@@ -105,30 +105,30 @@
                                     <div class="row">
                                         <!-- /col-md-6 -->
                                         <div class="col-md-12 detailed">
-                                            <div class="col-md-8 col-md-offset-2 mt" th:each="clientes : ${cliente}">
+                                            <div class="col-md-8 col-md-offset-2 mt">
                                                 <h4>Dados da Empresa</h4>
                                                 <h5>Nome da Empresa/Ong</h5>
-                                                <p th:text="${clientes.nome}"></p>
+                                                <p th:text="${cliente.nome}"></p>
                                                 <h5>CNPJ</h5>
-                                                <p th:text="${clientes.cnpj}"></p>
+                                                <p th:text="${cliente.cnpj}"></p>
                                             </div>
-                                            <div class="col-md-8 col-md-offset-2 mt" th:each="clientes : ${cliente}">
+                                            <div class="col-md-8 col-md-offset-2 mt" >
                                                 <h4>Endereço</h4>
                                                 <h5>Rua</h5>
-                                                <p th:text="${clientes.endereco.rua}"></p>
+                                                <p th:text="${cliente.endereco.rua}"></p>
                                                 <h5>Cep</h5>
-                                                <p th:text="${clientes.endereco.cep}"></p>
+                                                <p th:text="${cliente.endereco.cep}"></p>
                                                 <h5>Cidade</h5>
-                                                <p th:text="${clientes.endereco.cidade}"></p>
+                                                <p th:text="${cliente.endereco.cidade}"></p>
                                                 <h5>Estado</h5>
-                                                <p th:text="${clientes.endereco.estado}"></p>
+                                                <p th:text="${cliente.endereco.estado}"></p>
                                             </div>
-                                            <div class="col-md-8 col-md-offset-2 mt" th:each="clientes : ${cliente}">
+                                            <div class="col-md-8 col-md-offset-2 mt" >
                                                 <h4>Contato</h4>
                                                 <h5>Telefone</h5>
-                                                <p th:text="${clientes.telefone.telefone}">+33 4898-4303</p>
+                                                <p th:text="${cliente.telefone.telefone}">+33 4898-4303</p>
                                                 <h5>Email</h5>
-                                                <p th:text="${clientes.email}">hello@dashiotheme.com</p>
+                                                <p th:text="${cliente.email}">hello@dashiotheme.com</p>
                                             </div>
                                         </div>
                                         <!-- /col-md-6 -->
