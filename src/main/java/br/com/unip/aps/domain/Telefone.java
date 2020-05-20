@@ -26,7 +26,7 @@ public class Telefone implements Serializable {
     private Long id;
 
     @NotBlank(message = "Telefone não pode está em branco")
-    @Pattern(regexp = "(([0-9]{8})|([0-9]{9}))", message = "O Telefone informado não é valido")
+    @Pattern(regexp = "(([0-9]{8})|([0-9]{9}))", message = "O Telefone informado não é valido (Não pode colocar o DDD)")
     private String telefone;
 
     @NotBlank(message = "Ramal não pode está em branco")

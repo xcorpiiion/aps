@@ -45,6 +45,8 @@ public class Empresa implements Serializable {
 	@JoinColumn(name = "id_telefone")
 	private Telefone telefone;
 
+	private boolean teste;
+
 	private boolean isLogado;
 
 	public Empresa() {
@@ -121,6 +123,14 @@ public class Empresa implements Serializable {
 
 	public void setLogado(boolean logado) {
 		isLogado = logado;
+	}
+
+	public boolean isTeste() {
+		return teste;
+	}
+
+	public void setTeste(boolean teste) {
+		this.teste = teste;
 	}
 
 	@Override

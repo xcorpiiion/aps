@@ -44,6 +44,8 @@ public class Ong implements Serializable {
 	@JoinColumn(name = "id_telefone")
 	private Telefone telefone;
 
+	private boolean isLogado;
+
 	public Ong() {
 	}
 
@@ -110,6 +112,14 @@ public class Ong implements Serializable {
 
 	public void setTelefone(Telefone telefone) {
 		this.telefone = telefone;
+	}
+
+	public boolean isLogado() {
+		return isLogado;
+	}
+
+	public void setLogado(boolean logado) {
+		isLogado = logado;
 	}
 
 	@Override

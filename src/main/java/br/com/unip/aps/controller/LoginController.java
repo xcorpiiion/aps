@@ -2,7 +2,9 @@ package br.com.unip.aps.controller;
 
 import javax.validation.Valid;
 
+import br.com.unip.aps.domain.Ong;
 import br.com.unip.aps.repository.IEmpresaRepository;
+import br.com.unip.aps.repository.IOngRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -25,27 +27,25 @@ public class LoginController {
 	@Autowired
 	private IEmpresaRepository empresaRepository;
 
+	@Autowired
+	private IOngRepository ongRepository;
+
 	private Empresa empresa;
+
+	private Ong ong;
 	
 	@GetMapping("/login")
 	public String preSalvar(@ModelAttribute("login") Empresa empresa, RedirectAttributes redirect) {
-		empresa = this.empresa;
+		empresa = loginService.retornaEmpresaLogada();
 		if(empresa == null) {
 			return "/login/login";
 		}
+
 		if(empresa.isLogado()) {
 			redirect.addFlashAttribute("mensagem", "");
 			return "redirect:/home";
 		}
 		return "/login/login";
-	}
-
-	@GetMapping("/sair")
-	public String sair(@ModelAttribute("login") Empresa empresa) {
-		empresa = this.empresa;
-		empresa.setLogado(false);
-		empresaRepository.save(empresa);
-		return "redirect:/login/login";
 	}
 
 	@PostMapping("/salvar")
@@ -54,16 +54,20 @@ public class LoginController {
 			return "/login/login";
 		}
 
-		empresa = loginService.fazerLogin(cliente.getEmail(), cliente.getSenha());
+		empresa = loginService.fazerLoginEmpresa(cliente.getEmail(), cliente.getSenha());
 		if(empresa != null) {
 			redirect.addFlashAttribute("mensagem", "Login feito com sucesso");
 			empresa.setLogado(true);
 			empresaRepository.save(empresa);
-			return "redirect:/home";
+			return "redirect:/dashbord/inicial";
 		} else {
+			this.ong = loginService.fazerLoginOng(cliente.getEmail(), cliente.getSenha());
+			if(this.ong != null) {
+				this.ong.setLogado(true);
+				ongRepository.save(ong);
+				return "redirect:/dashbord/inicial";
+			}
 			redirect.addFlashAttribute("mensagem", "Não foi feito login");
-			empresa.setLogado(false);
-			empresaRepository.save(empresa);
 			return "/login/login";
 		}
 	}
